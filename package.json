@@ -1,0 +1,20 @@
+{
+  "name": "jetstate",
+  "version": "1.0.0",
+  "description": "state managment",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/uxitten/jetstate.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/uxitten/jetstate/issues"
+  },
+  "homepage": "https://github.com/uxitten/jetstate#readme"
+}
