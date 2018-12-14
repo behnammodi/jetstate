@@ -17,27 +17,20 @@ var state = {
  * @returns {undefined} nothing
  */
 exports.init = function init(config) {
-  var name = config.name;
-  var defaultValue = config.defaultValue;
-  var willReceive = config.willReceive;
-  var willUpdate = config.willUpdate;
-  var didUpdate = config.didUpdate;
-  var shouldUpdate = config.shouldUpdate;
-
-  state.__container__[name] = defaultValue;
-  Object.defineProperty(state, name, {
-    get() {
-      willReceive && willReceive(state.__container__[name]);
-      return state.__container__[name];
+  state.__container__[config.name] = config.defaultValue;
+  Object.defineProperty(state, config.name, {
+    get: function get() {
+      config.willReceive && config.willReceive(state.__container__[config.name]);
+      return state.__container__[config.name];
     },
-    set(value) {
-      willUpdate && willUpdate(state.__container__[name], value);
-      if (shouldUpdate)
-        if (shouldUpdate(state.__container__[name], value) === false) return;
-      state.__container__[name] = value;
-      didUpdate && didUpdate(value);
+    set: function set(value) {
+      config.willUpdate && config.willUpdate(state.__container__[config.name], value);
+      if (config.shouldUpdate)
+        if (config.shouldUpdate(state.__container__[config.name], value) === false) return;
+      state.__container__[config.name] = value;
+      config.didUpdate && config.didUpdate(value);
     }
-  })
+  });
 }
 
 /**
