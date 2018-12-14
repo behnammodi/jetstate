@@ -3,13 +3,13 @@ const { init, state } = require('./index');
 init({
   name: 'time',
   defaultValue: new Date().getTime(),
-  willReceive: (value) => {
+  willReceive: value => {
     console.log('willReceive time', value);
   },
-  willUpdate: (previous, next) => {
-    console.log('willUpdate', previous, next);
+  willUpdate: (previousValue, nextValue) => {
+    console.log('willUpdate', previousValue, nextValue);
   },
-  didUpdate: (value) => {
+  didUpdate: value => {
     console.log('didUpdate', value);
   }
 });
