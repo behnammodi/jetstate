@@ -22,6 +22,10 @@ init({
   willUpdate: (previousValue, nextValue) => {
     console.log('willUpdate', previousValue, nextValue);
   },
+  shouldUpdate: (previousValue, nextValue) => {
+    if (typeof nextValue 'number') return true;
+    else return false        
+  },
   didUpdate: value => {
     console.log('didUpdate', value);
   }
