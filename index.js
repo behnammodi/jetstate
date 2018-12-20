@@ -10,7 +10,7 @@ class Action {
     this._willReceive = config.willReceive;
     this._willUpdate = config.willUpdate;
     this._shouldUpdate = config.shouldUpdate;
-    this.addDidUpdate(config.didUpdate);
+    config.didUpdate && this.addDidUpdate(config.didUpdate);
     config.name &&
       Object.defineProperty(state, config.name, {
         get: this.get,
