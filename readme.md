@@ -45,7 +45,7 @@ time.get();
 ..
 // you can get an item
 time.get("hours");
-// return hours
+// return {hours,minutes}
 ..
 
 //with this code, willUpdate is run and then all added didUpdate is run
@@ -63,14 +63,14 @@ time.remove("hours");
 
 ```javascript
 // change willReceive
-time.willReceive=function(value){
+time.willReceive(function(value){
   console.log('new will receive', value);
-}
+})
 
 ..
 // add another didUpdate
-time.addDidUpdate=function(value){
+time.addDidUpdate(function(value){
   console.log('second didUpdate', value);
-}
+})
 //when set state all added didUpdate is run
 ```
