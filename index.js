@@ -55,7 +55,7 @@ class Action {
     return this.data;
   };
   remove(key) {
-    if (key) {
+    if (key && typeof this.data == "object") {
       this.data[key] && delete this.data[key];
     } else this.data = null;
     return this.data;
