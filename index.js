@@ -55,7 +55,7 @@ class Action {
     return this.data;
   };
   remove(key) {
-    if (id && typeof this.data == "object") {
+    if (key) {
       this.data[key] && delete this.data[key];
     } else this.data = null;
     return this.data;
@@ -77,12 +77,11 @@ class Action {
  * @param {function} config.willUpdate function for before set state
  * @param {function} config.shouldUpdate function for is need update
  * @param {function} config.didUpdate function for is need update
- * @returns {Object} state object for work with this state
+ * @returns {Action} state object for work with this state
  */
 exports.init = function init(config) {
   config = typeof config == "object" ? config : {};
-  const action = new Action(config);
-  return action;
+  return new Action(config);
 };
 /**
  * state container
