@@ -15,10 +15,7 @@ import { init, state } from 'jetstate';
  */
 init({
   name: 'time',
-  defaultValue: new Date().getTime(),
-  willReceive: value => {
-    console.log('willReceive time', value);
-  },
+  defaultValue: new Date().getTime(), 
   willUpdate: (previousValue, nextValue) => {
     console.log('willUpdate', previousValue, nextValue);
   },
@@ -31,7 +28,6 @@ init({
   }
 });
 
-// with this code, willReceive is run
 var time = state.time;
 
 //with this code, willUpdate is run and then didUpdate is run
