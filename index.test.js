@@ -10,7 +10,13 @@ init({
     console.log('willUpdate', previousValue, nextValue);
   },
   shouldUpdate: (previousValue, nextValue) => {
-    console.log('shouldUpdate', previousValue, nextValue, 'result:', previousValue < nextValue);
+    console.log(
+      'shouldUpdate',
+      previousValue,
+      nextValue,
+      'result:',
+      previousValue < nextValue
+    );
     if (previousValue < nextValue) return true;
     else return false;
   },
