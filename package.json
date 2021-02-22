@@ -8,13 +8,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/uxitten/jetstate.git"
+    "url": "git+https://github.com/behnammodi/jetstate.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/uxitten/jetstate/issues"
+    "url": "https://github.com/behnammodi/jetstate/issues"
   },
-  "homepage": "https://github.com/uxitten/jetstate#readme"
+  "homepage": "https://github.com/behnammodi/jetstate#readme"
 }
